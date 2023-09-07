@@ -1,0 +1,20 @@
+{
+    "tipo": [
+        "Carros",
+        "Motos"
+    ],
+    "colores": [
+        "Verde",
+        "Gris",
+        "Azul",
+        "Amarillo",
+        "Morado",
+        "Blanco",
+        "Negro",
+        "Rojo"
+    ],
+    "estado": [
+        "Nuevo",
+        "Usado"
+    ]
+}
