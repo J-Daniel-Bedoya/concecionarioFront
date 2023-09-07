@@ -81,23 +81,24 @@ const Filter = () => {
       setArrName(arrName.filter((item) => item !== name));
     } else {
       setArrName([...arrName, name]);
-    }
-    switch (filter) {
-      case "tipo":
-        setTipo([]);
-        break;
-      case "modelos_carro":
-        setCarros([]);
-        break;
-      case "modelos_moto":
-        setMotos([]);
-        break;
-      case "colors":
-        setColor([]);
-        break;
-      case "estado":
-        setEstado([]);
-        break;
+      setArrId([...arrId, { name, filter }]);
+      switch (filter) {
+        case "tipo":
+          setTipo([]);
+          break;
+        case "modelos_carro":
+          setCarros([]);
+          break;
+        case "modelos_moto":
+          setMotos([]);
+          break;
+        case "colors":
+          setColor([]);
+          break;
+        case "estado":
+          setEstado([]);
+          break;
+      }
     }
   };
 
@@ -122,41 +123,39 @@ const Filter = () => {
   const deselect = (name) => {
     if (arrName.includes(name)) {
       const updatedArrName = arrName.filter((item) => item !== name);
-      let updateTipo = tipo;
-      let updateCarros = carros;
-      let updateMotos = motos;
-      let updateColor = color;
-      let updateEstado = estado;
+      const { tipo, colores, estado } = Arrays;
+      const carros = [];
+      const motos = [];
+      for (const model of arrModels) {
+        if (model.tipo == "Carro") {
+          carros.push(model.modelo);
+        } else {
+          motos.push(model.modelo);
+        }
+      }
 
       arrId.forEach((content) => {
         if (content.name === name) {
           switch (content.filter) {
             case "tipo":
-              setTipo(updateTipo);
+              setTipo(tipo);
               break;
             case "modelos_carro":
-              setCarros(updateCarros);
+              setCarros(carros);
               break;
             case "modelos_moto":
-              setMotos(updateMotos);
+              setMotos(motos);
               break;
             case "colors":
-              setColor(updateColor);
+              setColor(colores);
               break;
             case "estado":
-              setEstado(updateEstado);
+              setEstado(estado);
               break;
           }
         }
       });
-
-      // Actualiza las propiedades independientes
       setArrName(updatedArrName);
-      setTipo(updateTipo);
-      setCarros(updateCarros);
-      setMotos(updateMotos);
-      setColor(updateColor);
-      setEstado(updateEstado);
     }
   };
   return (
