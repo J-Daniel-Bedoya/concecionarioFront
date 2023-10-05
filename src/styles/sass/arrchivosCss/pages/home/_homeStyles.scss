@@ -1,0 +1,15 @@
+.home {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ae5757;
+
+  &__container {
+    width: 70rem;
+    background-color: #eab1b1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

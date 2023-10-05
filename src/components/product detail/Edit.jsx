@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { Button, Form, Modal } from "react-bootstrap";
-// import Arrays from "../../../public/arrays.json";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { updateVehicleThunk } from "../../store/slices/vehicles.slice";
@@ -38,63 +36,63 @@ const Edit = ({ vehicle }) => {
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
+      <button variant="primary" onClick={handleShow}>
         Edit
-      </Button>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Edit</Modal.Title>
-        </Modal.Header>
+      </button>
+      <div show={show} onHide={handleClose}>
+        <div>
+          <p>Edit</p>
+        </div>
 
-        <Modal.Body>
-          <Form
+        <div>
+          <form
             onSubmit={handleSubmit(submit)}
             className="form-edit"
             id="edit-form"
           >
             {!vehicle?.esNuevo && (
-              <Form.Group className="mb-3">
-                <Form.Label>Kilometer</Form.Label>
-                <Form.Control
+              <div className="mb-3">
+                <label>Kilometer</label>
+                <input
                   type="number"
                   placeholder={`${vehicle?.kilometraje}`}
                   min={vehicle?.kilometraje}
                   {...register("kilometraje")}
                 />
-              </Form.Group>
+              </div>
             )}
-            <Form.Group className="mb-3">
-              <Form.Label>Color</Form.Label>
-              <Form.Control
+            <div className="mb-3">
+              <label>Color</label>
+              <input
                 type="text"
                 placeholder={`${vehicle?.color}`}
                 {...register("color")}
               />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Price</Form.Label>
-              <Form.Control
+            </div>
+            <div className="mb-3">
+              <label>Price</label>
+              <input
                 type="number"
                 placeholder={`${vehicle?.precio}`}
                 max="250000000"
                 min="1000000"
                 {...register("precio")}
               />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Image</Form.Label>
-              <Form.Control
+            </div>
+            <div className="mb-3">
+              <label>Image</label>
+              <input
                 type="file"
                 accept="image/png, image/jpeg"
                 {...register("img")}
               />
-            </Form.Group>
-            <Button variant="primary" type="submit">
+            </div>
+            <button variant="primary" type="submit">
               Submit
-            </Button>
-          </Form>
-        </Modal.Body>
-      </Modal>
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

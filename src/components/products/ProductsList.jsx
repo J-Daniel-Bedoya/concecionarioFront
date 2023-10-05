@@ -7,6 +7,7 @@ const ProductsList = () => {
   const dispatch = useDispatch();
   const vehicles = useSelector((state) => state.vehicles);
   const arrFilters = useSelector((state) => state.filters);
+  const price = useSelector((state) => state.valor);
   const [vehicle, setVehicle] = useState([]);
 
   useEffect(() => {
@@ -17,14 +18,16 @@ const ProductsList = () => {
     if (arrFilters.length !== 0) {
       const filteredVehicles = vehicles.filter((item) => {
         return arrFilters.every((filter) => {
-          // Comprueba si el filtro coincide con alguna propiedad del vehículo
+          let estado = item.estado;
+          estado = item.esNuevo === true ? "Nuevo" : "Usado";
+
           return (
             `${item.tipo}s` === filter ||
-            item.color === filter ||
-            item.estado === filter ||
             item.modelo === filter ||
-            (parseFloat(item.precio) <= parseFloat(filter) &&
-              parseFloat(item.precio) > 0)
+            item.color === filter ||
+            estado === filter ||
+            (item.precio >= parseInt(price[0]) &&
+              item.precio <= parseInt(price[1]))
           );
         });
       });

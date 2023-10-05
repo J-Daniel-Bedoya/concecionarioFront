@@ -1,4 +1,3 @@
-import Navbar from "../components/home/Navbar";
 import Filter from "../components/home/Filter";
 import ProductsList from "../components/products/ProductsList";
 import { useDispatch } from "react-redux";
@@ -13,8 +12,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <Navbar />
-      <div className="home__sect">
+      <div className="home__container">
         <Filter />
         <ProductsList />
       </div>

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setLoading } from "../../store/slices/loader.slice";
@@ -29,38 +27,43 @@ function LoginCard() {
   };
 
   return (
-    <Form className="login-form" onSubmit={handleSubmit(submit)}>
-      <img
-        src="https://img.freepik.com/vector-premium/perfil-avatar-hombre-icono-redondo_24640-14044.jpg?w=2000"
-        alt="user"
-      />
-      <Form.Group className="login__input mb-3" controlId="formBasicEmail">
-        <Form.Label>Email</Form.Label>
-        <Form.Control
-          type="email"
-          placeholder="Enter email"
-          required
-          {...register("email")}
+    <form className="loginCard" onSubmit={handleSubmit(submit)}>
+      <div className="loginCard__img">
+        <img
+          src="https://img.freepik.com/vector-premium/perfil-avatar-hombre-icono-redondo_24640-14044.jpg?w=2000"
+          alt="user"
         />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
+      </div>
 
-      <Form.Group className="login__input mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          type="password"
-          placeholder="Password"
-          required
-          {...register("password")}
-        />
-      </Form.Group>
+      <div className="loginCard__inputs">
+        <div className="loginCard__inputs--container">
+          {/* <div className="email"> */}
+          <label>Email</label>
+          <input
+            type="email"
+            placeholder="Enter email"
+            required
+            {...register("email")}
+          />
+          {/* </div> */}
+          <p>We'll never share your email with anyone else.</p>
+        </div>
 
-      <Button className="login__botton" variant="primary" type="submit">
+        <div className="loginCard__inputs--container">
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            {...register("password")}
+          />
+        </div>
+      </div>
+
+      <button className="loginCard__button" variant="primary" type="submit">
         Login
-      </Button>
-    </Form>
+      </button>
+    </form>
   );
 }
 

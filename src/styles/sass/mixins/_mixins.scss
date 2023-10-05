@@ -1,0 +1,24 @@
+@mixin flex(
+  $direction: row,
+  $jutify: flex-start,
+  $align: flex-start,
+  $gap1: 0,
+  $gap2: $gap1
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jutify;
+  align-items: $align;
+  gap: $gap1, $gap2;
+}
+
+@mixin medidas($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+}
+@mixin medidas2($minWidth: 0%, $maxWidth: 0%, $minHeight: 0%, $maxHeight: 0%) {
+  min-width: $minWidth;
+  max-width: $maxWidth;
+  min-height: $minHeight;
+  max-height: $maxHeight;
+}
