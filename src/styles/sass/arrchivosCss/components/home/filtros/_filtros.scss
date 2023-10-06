@@ -17,8 +17,8 @@
     &--sub {
       & .options__sub {
         overflow-y: scroll;
-        margin-top: 0.8rem;
-        padding-left: 8px;
+        // margin-top: 0.8rem;
+        // padding-left: 8px;
 
         &--div {
           font-weight: 500;
@@ -83,7 +83,7 @@
   }
 
   &__viewer {
-    background-color: #ffffff;
+    background-color: #e2b6b6;
     outline: 1px solid #dbd9d9;
     border-radius: 5px;
     padding: 10px 10px 10px 3px;

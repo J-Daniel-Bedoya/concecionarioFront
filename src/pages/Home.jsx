@@ -6,7 +6,7 @@ import { setLoading } from "../store/slices/loader.slice";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const isView = useSelector((state) => state.isView);
+  // const isView = useSelector((state) => state.isView);
   useEffect(() => {
     dispatch(setLoading(false));
   }, []);
@@ -14,8 +14,7 @@ const Home = () => {
   return (
     <div className="home">
       <div className="home__container">
-        {isView && <Filter />}
-
+        <Filter />
         <ProductsList />
       </div>
     </div>

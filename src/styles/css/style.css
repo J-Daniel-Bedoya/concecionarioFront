@@ -436,13 +436,13 @@
   width: 70rem;
   padding: 0 2rem;
   margin-top: 4rem;
-  display: grid;
-  grid-template-columns: 30% 70%;
 }
 
 @media screen and (width >= 768px) {
   .home__container {
     padding: 0 1.6rem;
+    display: grid;
+    grid-template-columns: 30% 70%;
   }
 }
 @media screen and (width >= 1500px) {
@@ -463,8 +463,6 @@
 }
 .filter__options--sub .options__sub {
   overflow-y: scroll;
-  margin-top: 0.8rem;
-  padding-left: 8px;
 }
 .filter__options--sub .options__sub--div {
   font-weight: 500;
@@ -514,7 +512,7 @@
   font-weight: 600;
 }
 .filter__viewer {
-  background-color: #ffffff;
+  background-color: #e2b6b6;
   outline: 1px solid #dbd9d9;
   border-radius: 5px;
   padding: 10px 10px 10px 3px;

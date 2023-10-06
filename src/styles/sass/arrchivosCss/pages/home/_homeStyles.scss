@@ -12,8 +12,6 @@
     padding: 0 2rem;
     // background-color: #eab1b1;
     margin-top: 4rem;
-    display: grid;
-    grid-template-columns: 30% 70%;
   }
 }
 
@@ -21,6 +19,8 @@
   .home {
     &__container {
       padding: 0 1.6rem;
+      display: grid;
+      grid-template-columns: 30% 70%;
       // padding-left: 0.5rem;
     }
   }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getPriceThunk } from "../../store/slices/price.slice";
 import TipoVehiculo from "./filters/tipoVehiculo";
 import Modelos from "./filters/Modelos";
@@ -11,6 +11,7 @@ import Selecciones from "./filters/Selecciones";
 
 const Filter = () => {
   const dispatch = useDispatch();
+  const isView = useSelector((state) => state.isView);
 
   useEffect(() => {
     dispatch(getPriceThunk());
@@ -20,14 +21,19 @@ const Filter = () => {
     <div className="filter">
       <div className="filter__options">
         <Selecciones />
-        <br />
-        <br />
-        <h5 className="filter__tittle">Filtros</h5>
-        <TipoVehiculo />
-        <Modelos />
-        <Colores />
-        <Estados />
-        <Valor />
+        <div>ajeflljkfa</div>
+        {isView && (
+          <>
+            <br />
+            <br />
+            <h5 className="filter__tittle">Filtros</h5>
+            <TipoVehiculo />
+            <Modelos />
+            <Colores />
+            <Estados />
+            <Valor />
+          </>
+        )}
       </div>
     </div>
   );
