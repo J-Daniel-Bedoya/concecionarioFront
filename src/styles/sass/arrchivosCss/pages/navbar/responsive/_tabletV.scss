@@ -46,7 +46,9 @@
 
         & .nav__register,
         .nav__cuenta {
+          width: max-content;
           margin: 0;
+          padding-right: 1rem;
           cursor: pointer;
           transition: 0.4s;
 
@@ -59,6 +61,9 @@
         & .nav__cuenta {
           width: 2.5rem;
           height: 2.5rem;
+          justify-content: center;
+          padding: 0;
+          border-radius: 100%;
           & > i {
             color: #fff;
           }

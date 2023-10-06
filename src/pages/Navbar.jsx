@@ -90,11 +90,19 @@ const Navbar = () => {
             className="nav__register"
             variant="outline-success"
           >
-            Nuevo Producto
+            <i className="fa-solid fa-circle-plus"></i>
+            <span>Nuevo Producto</span>
           </button>
 
           <button className="nav__cuenta" onClick={() => deploy("profile")}>
-            {!isBlock ? <i className="fa-regular fa-user"></i> : "Perfil"}
+            {!isBlock ? (
+              <i class="fa-solid fa-user"></i>
+            ) : (
+              <div>
+                <i class="fa-solid fa-user"></i>
+                <span>Perfil</span>
+              </div>
+            )}
           </button>
           {isBlock && (
             <div className="navbar__container--filter">

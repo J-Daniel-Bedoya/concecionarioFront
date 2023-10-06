@@ -41,9 +41,10 @@
         font-size: 18px;
       }
       & input {
-        height: 2.4rem;
+        height: 2.5rem;
         padding-left: 0.7rem;
         font-size: 16px;
+        border-radius: 5px;
       }
 
       & p {
@@ -54,13 +55,13 @@
 
   &__button {
     width: 100%;
-    height: 2.2rem;
+    height: 2.5rem;
     background-color: #545cee;
     border: none;
     color: #fff;
     font-size: 1.2rem;
     font-weight: bold;
-    border-radius: 1rem;
+    border-radius: 5px;
     // margin-top: 2rem;
     /* padding-top: 2rem; */
 
