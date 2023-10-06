@@ -1,5 +1,4 @@
 @use "../../../../variables/var";
-// @use "../../../mixins/mixins";
 
 .navbar {
   background: linear-gradient(to right, #471ac5, #074f97);
@@ -27,7 +26,6 @@
     &--logo {
       width: 3rem;
       height: 3rem;
-      //   background-color: #a57070;
       border-radius: 100%;
       background-position: center;
       background-repeat: no-repeat;
@@ -132,9 +130,9 @@
           background: linear-gradient(to right, #5315fd, #1188ff);
           font-weight: 600;
 
-          & i {
-            // font-size: 2rem;
-          }
+          //   & i {
+          //     // font-size: 2rem;
+          //   }
         }
       }
       & .nav__register {

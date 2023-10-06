@@ -4,8 +4,6 @@
 .filter {
   width: 30%;
   display: flex;
-  // justify-content: start;
-  // align-items: start;
 
   &__tittle {
     font-family: var.$Open;
@@ -19,9 +17,6 @@
         overflow-y: scroll;
         margin-top: 0.8rem;
         padding-left: 8px;
-
-        &::-webkit-scrollbar {
-        }
 
         &--div {
           font-weight: 500;
