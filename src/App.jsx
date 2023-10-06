@@ -14,6 +14,7 @@ import ProductDetail from "./pages/ProductDetail";
 // import Loader from "./components/login/Loader";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import Navbar from "./pages/Navbar";
+import Profile from "./pages/Profile";
 
 function App() {
   // const loader = useSelector((state) => state.loader);
@@ -29,6 +30,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/home/products/:id" element={<ProductDetail />} />
             <Route path="/home/register" element={<Register />} />
+            <Route path="/home/profile" element={<Profile />} />
           </Route>
         </Routes>
       </HashRouter>

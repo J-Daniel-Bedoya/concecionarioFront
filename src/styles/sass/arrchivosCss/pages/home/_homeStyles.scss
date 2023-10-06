@@ -1,15 +1,35 @@
 .home {
   width: 100%;
   height: auto;
+  padding-top: 5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #ae5757;
+  // align-items: center;
+  // background-color: #ae5757;
 
   &__container {
     width: 70rem;
-    background-color: #eab1b1;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    padding: 0 2rem;
+    // background-color: #eab1b1;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (width >= 768px) {
+  .home {
+    &__container {
+      padding: 0 1.6rem;
+      // padding-left: 0.5rem;
+    }
+  }
+}
+@media screen and (width >= 1500px) {
+  .home {
+    &__container {
+      padding: 0;
+      padding-left: 0.5rem;
+    }
   }
 }

@@ -38,8 +38,6 @@ const ProductsList = () => {
     }
   }, [vehicles, arrFilters]);
 
-  // console.log(vehicle);
-
   return (
     <div className="productsList">
       {vehicle.map((prod, i) => (

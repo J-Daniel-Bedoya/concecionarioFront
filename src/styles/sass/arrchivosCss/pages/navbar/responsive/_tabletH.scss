@@ -1,0 +1,8 @@
+@media screen and (width >= 1024px) {
+  .navbar {
+    &__container {
+      width: 70rem;
+      padding: 0 1rem;
+    }
+  }
+}
