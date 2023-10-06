@@ -268,7 +268,7 @@
   height: 2.5rem;
   border-radius: 5px;
   border: 1px solid #7244fc;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding-left: 0.8rem;
   border: none;
 }
@@ -282,9 +282,10 @@
   border: none;
   color: #fff;
   background: linear-gradient(to right, #5315fd, #1188ff);
+  font-size: 1rem;
 }
 .navbar__container--active .nav__register, .navbar__container--inActive .nav__register {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 .navbar__container--active .nav__register,
 .navbar__container--active .nav__cuenta, .navbar__container--inActive .nav__register,
@@ -300,6 +301,7 @@
   gap: 1rem;
   background: linear-gradient(to right, #5315fd, #1188ff);
   font-weight: 600;
+  font-size: 1rem;
 }
 .navbar__container--active .nav__register i,
 .navbar__container--active .nav__cuenta i, .navbar__container--inActive .nav__register i,
