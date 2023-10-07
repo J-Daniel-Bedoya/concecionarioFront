@@ -1,8 +1,9 @@
 .productsList {
   width: 100%;
   height: auto;
+  margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   place-items: center;
-  gap: 2rem 1rem;
+  gap: 2rem 0;
 }

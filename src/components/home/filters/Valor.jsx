@@ -41,7 +41,6 @@ const Valor = () => {
         timeout={300}
         classNames="expand"
         unmountOnExit
-        nodeRef={myRef}
       >
         <div className="options__sub" ref={myRef}>
           <form

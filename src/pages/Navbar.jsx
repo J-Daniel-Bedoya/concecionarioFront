@@ -52,8 +52,10 @@ const Navbar = () => {
         >
           <Clear isBlock={isBlock} setIsBlock={setIsBlock} />
           <Search isBlock={isBlock} setIsBlock={setIsBlock} />
-          <Register deploy={deploy} />
-          <Profile deploy={deploy} isBlock={isBlock} />
+          <div className="buttons">
+            <Register deploy={deploy} />
+            <Profile deploy={deploy} isBlock={isBlock} />
+          </div>
           <FiltersNav isBlock={isBlock} />
         </div>
       </div>

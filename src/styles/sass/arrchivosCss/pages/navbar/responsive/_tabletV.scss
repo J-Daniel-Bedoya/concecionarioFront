@@ -44,28 +44,29 @@
           }
         }
 
-        & .nav__register,
-        .nav__cuenta {
-          width: max-content;
-          margin: 0;
-          padding-right: 1rem;
-          cursor: pointer;
-          transition: 0.4s;
+        & .buttons {
+          & button {
+            width: max-content;
+            margin: 0;
+            padding-right: 1rem;
+            cursor: pointer;
+            transition: 0.4s;
 
-          &:hover {
-            background: linear-gradient(to right, #6026ff, #2d96ff);
-            transform: scale(1.05);
+            &:hover {
+              background: linear-gradient(to right, #6026ff, #2d96ff);
+              transform: scale(1.05);
+            }
           }
-        }
 
-        & .nav__cuenta {
-          width: 2.5rem;
-          height: 2.5rem;
-          justify-content: center;
-          padding: 0;
-          border-radius: 100%;
-          & > i {
-            color: #fff;
+          & .nav__cuenta {
+            width: 2.5rem;
+            height: 2.5rem;
+            justify-content: center;
+            padding: 0;
+            border-radius: 100%;
+            & > i {
+              color: #fff;
+            }
           }
         }
       }

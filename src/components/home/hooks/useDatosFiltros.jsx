@@ -6,7 +6,7 @@ const useDatosFiltros = () => {
   const arrModelos = useSelector((state) => state.price);
 
   const [tipo, setTipo] = useState([]);
-  const [color, setColor] = useState([]);
+  const [colores, setColores] = useState([]);
   const [estado, setEstado] = useState([]);
   const [carros, setCarros] = useState([]);
   const [motos, setMotos] = useState([]);
@@ -24,7 +24,7 @@ const useDatosFiltros = () => {
     }
 
     setTipo(tipo);
-    setColor(colores);
+    setColores(colores);
     setEstado(estado);
     setCarros(carros);
     setMotos(motos);
@@ -32,13 +32,13 @@ const useDatosFiltros = () => {
 
   return {
     tipo,
-    color,
+    colores,
     estado,
     carros,
     motos,
 
     setTipo,
-    setColor,
+    setColores,
     setCarros,
     setEstado,
     setMotos,

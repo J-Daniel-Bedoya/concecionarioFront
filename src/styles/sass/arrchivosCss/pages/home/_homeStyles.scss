@@ -25,6 +25,13 @@
     }
   }
 }
+@media screen and (width >= 1024px) {
+  .home {
+    &__container {
+      grid-template-columns: 20% 80%;
+    }
+  }
+}
 @media screen and (width >= 1500px) {
   .home {
     &__container {

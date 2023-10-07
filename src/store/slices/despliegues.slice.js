@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
-  
+import { createSlice } from "@reduxjs/toolkit";
+
 export const desplieguesSlice = createSlice({
-  name: 'despliegues',
+  name: "despliegues",
   initialState: {
     tipo: false,
     modelos: false,
@@ -11,10 +11,10 @@ export const desplieguesSlice = createSlice({
   },
   reducers: {
     setDespliegues: (state, actions) => {
-        state[actions.payload] = !state[actions.payload];
-    }
-  }
-})
-  
+      state[actions.payload] = !state[actions.payload];
+    },
+  },
+});
+
 export const { setDespliegues } = desplieguesSlice.actions;
 export default desplieguesSlice.reducer;
