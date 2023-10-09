@@ -8,10 +8,12 @@
   // background-color: #ae5757;
 
   &__container {
-    width: 70rem;
-    padding: 0 2rem;
-    // background-color: #eab1b1;
+    width: 100%;
+    height: auto;
+    gap: 3rem;
+    width: 75rem;
     margin-top: 4rem;
+    // background-color: #b99f9f;
   }
 }
 
@@ -28,7 +30,7 @@
 @media screen and (width >= 1024px) {
   .home {
     &__container {
-      grid-template-columns: 20% 80%;
+      grid-template-columns: 23% 74%;
     }
   }
 }

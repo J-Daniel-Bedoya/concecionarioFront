@@ -405,18 +405,13 @@
 }
 @media screen and (width >= 1024px) {
   .navbar__container {
-    width: 70rem;
+    width: 75rem;
     padding: 0 1rem;
   }
 }
 @media screen and (width >= 1500px) {
   .navbar__container {
     padding: 0;
-  }
-}
-@media screen and (width >= 1920px) {
-  .navbar__container {
-    width: 100rem;
   }
 }
 .home {
@@ -427,8 +422,10 @@
   justify-content: center;
 }
 .home__container {
-  width: 70rem;
-  padding: 0 2rem;
+  width: 100%;
+  height: auto;
+  gap: 3rem;
+  width: 75rem;
   margin-top: 4rem;
 }
 
@@ -441,7 +438,7 @@
 }
 @media screen and (width >= 1024px) {
   .home__container {
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 23% 74%;
   }
 }
 @media screen and (width >= 1500px) {
@@ -455,6 +452,8 @@
   height: auto;
 }
 .filter__container {
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
 }
@@ -467,10 +466,10 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
   font-weight: 600;
   font-size: 1rem;
-  color: #fff;
+  color: #ffffff;
 }
 .filter__container--title .title__text {
   display: flex;
@@ -479,31 +478,49 @@
 }
 .filter__container .fondo__filters {
   width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, #5315fd, #1188ff);
+  height: auto;
   border-radius: 0 0 5px 5px;
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.5rem;
 }
 .filter__container--options {
   width: 100%;
-  height: 100%;
-  padding: 0 1rem 0 3rem;
+  height: auto;
 }
 .filter__container--options .buttons {
   width: 100%;
-  height: 100%;
+  height: 2.2rem;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #fff;
+  color: #f4f4f4;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0.4rem 0;
+  padding: 0 1rem;
+  background: linear-gradient(to right, #5315fd, #1188ff);
+  border-radius: 5px 5px 0 0;
+}
+.filter__container--options .list {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  color: #e7e7e7;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(to right, #5315fd, #1188ff);
+}
+.filter__container--options .list__options {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(173, 173, 173, 0.8509803922);
 }
 .filter__container--options .list__warning {
   font-size: 10px;
@@ -552,17 +569,17 @@
 }
 .productsList {
   width: 100%;
-  height: auto;
+  height: 100dvh;
   margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   place-items: center;
   gap: 2rem 0;
+  overflow-y: scroll;
 }
 
 @media screen and (width >= 768px) {
   .productsList {
-    width: 70;
     margin-top: 0;
   }
 }

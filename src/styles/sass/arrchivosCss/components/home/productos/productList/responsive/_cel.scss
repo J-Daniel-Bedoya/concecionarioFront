@@ -1,9 +1,11 @@
 .productsList {
   width: 100%;
-  height: auto;
+  height: 100dvh;
   margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   place-items: center;
   gap: 2rem 0;
+  // background-color: #a7daec;
+  overflow-y: scroll;
 }
