@@ -12,7 +12,8 @@ const Button = ({ tipo, name, despliegue }) => {
         color: despliegue && "#",
       }}
     >
-      {name}{" "}
+      <p>{name} </p>
+
       {despliegue ? (
         <i className="fa-solid fa-caret-up"></i>
       ) : (

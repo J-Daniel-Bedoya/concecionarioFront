@@ -4,17 +4,22 @@ const Register = ({ deploy }) => {
   return (
     <button
       onClick={() => deploy("register")}
-      className="buttons__register"
-      variant="outline-success"
+      className="buttons__content"
+      // variant="outline-success"
     >
-      <i className="fa-solid fa-circle-plus"></i>
-      <span>Nuevo Producto</span>
+      <div>
+        <i className="fa-solid fa-circle-plus"></i>
+        <span>Nuevo Producto</span>
+      </div>
     </button>
   );
 };
 const Profile = ({ deploy, isBlock }) => {
   return (
-    <button className="buttons__cuenta" onClick={() => deploy("profile")}>
+    <button
+      className="buttons__content cuenta"
+      onClick={() => deploy("profile")}
+    >
       {!isBlock ? (
         <i className="fa-solid fa-user"></i>
       ) : (

@@ -1,5 +1,55 @@
 @media screen and (width >= 768px) {
   .filter {
     padding: 0;
+
+    &__container {
+      outline: 1px solid #e2e2e2;
+      border-radius: 5px;
+      box-shadow: 0 2px 12px #e2e2e2;
+      &--title {
+        color: #000;
+        // background: linear-gradient(to right, #5315fd70, #1188ff70);
+        background: none;
+        border-radius: 5px 5px 0 0;
+        border-bottom: 1px solid #1169c01d;
+      }
+
+      .fondo__filters {
+        background: linear-gradient(to right, #5315fd40, #1188ff40);
+        background: none;
+      }
+
+      &--options {
+        // padding: 0 1rem;
+        & .buttons {
+          cursor: pointer;
+          // background: linear-gradient(to right, #5315fd40, #1188ff40);
+          color: #000;
+          background: none;
+        }
+
+        & .list {
+          cursor: pointer;
+          background: none;
+          // background: linear-gradient(to right, #5315fd40, #1188ff40);
+          color: #fff;
+          gap: 0.3rem;
+          font-size: 0.8rem;
+          border-radius: 0;
+
+          &__options {
+            padding-left: 0.5rem;
+            height: 1.5rem;
+            background: linear-gradient(to right, #5315fdd3, #1188ffd3);
+            border: none;
+            border-radius: 5px;
+          }
+
+          &__warning {
+            color: #ab0909;
+          }
+        }
+      }
+    }
   }
 }

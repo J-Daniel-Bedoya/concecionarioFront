@@ -4,16 +4,11 @@
   padding-top: 5rem;
   display: flex;
   justify-content: center;
-  // align-items: center;
-  // background-color: #ae5757;
 
   &__container {
-    width: 100%;
-    height: auto;
-    gap: 3rem;
     width: 75rem;
-    margin-top: 4rem;
-    // background-color: #b99f9f;
+    height: auto;
+    margin: 4rem 0;
   }
 }
 
@@ -30,6 +25,7 @@
 @media screen and (width >= 1024px) {
   .home {
     &__container {
+      gap: 2rem;
       grid-template-columns: 23% 74%;
     }
   }

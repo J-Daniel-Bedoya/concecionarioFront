@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setIsView } from "../store/slices/isView.slice";
 import LogoNav from "../components/navbar/LogoNav";
 import { Open, Clear } from "../components/navbar/Bars";
@@ -12,7 +12,6 @@ import FiltersNav from "../components/navbar/FiltersNav";
 const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const isView = useSelector((state) => state.isView);
   const [isBlock, setIsBlock] = useState(false);
 
   useEffect(() => {

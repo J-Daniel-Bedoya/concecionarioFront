@@ -4,6 +4,7 @@ import useChecksFiltros from "../../../hooks/useChecksFiltros";
 
 const ListOptions = ({ type, arrElements, validacion }) => {
   const { clickCheckbox } = useChecksFiltros();
+
   return (
     <>
       {arrElements?.map((tipo, i) => (
@@ -12,7 +13,7 @@ const ListOptions = ({ type, arrElements, validacion }) => {
           onClick={() => clickCheckbox(tipo, type)}
           className="list__options"
           style={{
-            color: !validacion?.includes(tipo) && "#",
+            backgroundColor: !validacion?.includes(tipo) && "#5315fdd3",
           }}
         >
           <p>{tipo}</p>

@@ -5,13 +5,14 @@ import { getPriceThunk } from "../../store/slices/price.slice";
 import Valor from "./filters/Valor";
 import Selecciones from "./filters/Selecciones";
 import { Colores, Estados, Modelos, TipoVehiculo } from "./filters/Filters";
-import { setIsView } from "../../store/slices/isView.slice";
+// import { setIsViewNav } from "../../store/slices/isView.slice";
 import { CSSTransition } from "react-transition-group";
 
 const Filter = () => {
   const myRef = useRef();
   const dispatch = useDispatch();
   const isView = useSelector((state) => state.isView);
+  // const isViewNav = isView.isViewNav;
 
   useEffect(() => {
     dispatch(getPriceThunk());
@@ -22,12 +23,11 @@ const Filter = () => {
       <Selecciones />
       {isView.isView && (
         <div className="filter__container">
-          <div
-            className="filter__container--title"
-            onClick={() => setIsView(!isView.isView)}
-          >
-            <i className="fa-solid fa-filter"></i>
-            <span>Filtros</span>
+          <div className="filter__container--title">
+            <div className="title__text">
+              <i className="fa-solid fa-filter"></i>
+              <span>Filtros</span>
+            </div>
           </div>
           <CSSTransition
             in={isView.isView}

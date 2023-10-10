@@ -23,6 +23,8 @@
         position: static;
         background-color: transparent;
         padding: 0;
+        // padding-right: 1rem;
+        overflow-y: hidden;
 
         & .nav__search {
           flex-direction: row;
@@ -45,25 +47,27 @@
         }
 
         & .buttons {
-          & button {
-            width: max-content;
-            margin: 0;
-            padding-right: 1rem;
+          display: flex;
+          flex-direction: row;
+
+          &__content {
+            width: 12rem;
+            height: 2.5rem;
+            padding-left: 0;
+            justify-content: center;
             cursor: pointer;
             transition: 0.4s;
 
             &:hover {
               background: linear-gradient(to right, #6026ff, #2d96ff);
-              transform: scale(1.05);
+              // transform: scale(1.05);
             }
           }
-
-          & .nav__cuenta {
+          & .cuenta {
             width: 2.5rem;
             height: 2.5rem;
-            justify-content: center;
-            padding: 0;
             border-radius: 100%;
+            padding: 0;
             & > i {
               color: #fff;
             }

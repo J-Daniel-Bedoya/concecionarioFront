@@ -3,22 +3,11 @@ import useDatosFiltros from "../hooks/useDatosFiltros";
 import { useSelector } from "react-redux";
 import useTipoFiltroModelo from "../hooks/useTipoFiltroModelo";
 import { Model, Model2 } from "./modelFilters/Model";
-import useChecksFiltros from "../hooks/useChecksFiltros";
 
 const TipoVehiculo = () => {
   //
   const despliegue = useSelector((state) => state.despliegues["tipo"]);
   const { tipo } = useDatosFiltros();
-  //   const {} = useTipoFiltroModelo();
-  // const arrTipo = [tipo, colores, estado];
-
-  // const [arrDespliegue, setArrDespliegue] = useState([]);
-  //   const despliegue2 = useSelector((state) => state.despliegues[]);
-  // useEffect(() => {
-  //   const arreglo = Object.keys(despliegue);
-  //   setArrDespliegue(arreglo);
-  // }, []);
-  // console.log(arrDespliegue);
 
   return (
     <Model
@@ -27,10 +16,6 @@ const TipoVehiculo = () => {
       arrElements={tipo}
       despliegue={despliegue}
     />
-    // <>
-    /* {arrDespliegue.map((arr, index) => ( */
-    // ))}
-    // </>
   );
 };
 
