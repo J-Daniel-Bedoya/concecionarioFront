@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Arrays from "../../../../public/arrays.json";
+import Arrays from "../../../public/arrays.json";
 
 const useDatosFiltros = () => {
   const arrModelos = useSelector((state) => state.price);

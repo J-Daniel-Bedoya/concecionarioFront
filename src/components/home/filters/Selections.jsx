@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
-import useDesSeleccionar from "../hooks/useDesSeleccionar";
+import useDesSeleccionar from "../../../hooks/filters/useDesSeleccionar";
 import { useSelector } from "react-redux";
 import { CSSTransition } from "react-transition-group";
 
-const Selecciones = () => {
+const Selections = () => {
   const myRef = useRef();
   const arrSelecciones = useSelector((state) => state.filters);
   const { desSelecionar } = useDesSeleccionar();
@@ -15,12 +15,12 @@ const Selecciones = () => {
       classNames="expand"
       unmountOnExit
     >
-      <div className="filter__viewer" ref={myRef}>
+      <div className="filter__selections" ref={myRef}>
         {arrSelecciones.map((select, i) => (
           <div
             key={i}
             onClick={() => desSelecionar(select)}
-            className="filter__viewer--item"
+            className="filter__selections--item"
           >
             <p>{select}</p>
             <i className="fa-solid fa-circle-minus"></i>
@@ -31,4 +31,4 @@ const Selecciones = () => {
   );
 };
 
-export default Selecciones;
+export default Selections;

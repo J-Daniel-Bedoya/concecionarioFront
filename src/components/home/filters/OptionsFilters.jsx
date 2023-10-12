@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import useDatosFiltros from "../hooks/useDatosFiltros";
+import useDatosFiltros from "../../../hooks/filters/useDatosFiltros";
 import { useSelector } from "react-redux";
-import useTipoFiltroModelo from "../hooks/useTipoFiltroModelo";
+import useTipoFiltroModelo from "../../../hooks/filters/useTipoFiltroModelo";
 import { Model, Model2 } from "./modelFilters/Model";
 
 const TipoVehiculo = () => {

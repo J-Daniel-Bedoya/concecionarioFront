@@ -1,4 +1,4 @@
-import Filter from "../components/home/Filter";
+import Filter from "../components/home/Filters";
 import ProductsList from "../components/products/ProductsList";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -6,7 +6,6 @@ import { setLoading } from "../store/slices/loader.slice";
 
 const Home = () => {
   const dispatch = useDispatch();
-  // const isView = useSelector((state) => state.isView);
   useEffect(() => {
     dispatch(setLoading(false));
   }, []);

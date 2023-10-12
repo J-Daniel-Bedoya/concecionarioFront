@@ -6,7 +6,7 @@ import {
   Estados,
   Modelos,
   TipoVehiculo,
-} from "../home/filters/Filters";
+} from "../home/filters/OptionsFilters";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsViewNav } from "../../store/slices/isView.slice";
 import { CSSTransition } from "react-transition-group";

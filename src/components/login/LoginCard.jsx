@@ -56,7 +56,7 @@ function LoginCard() {
           <label>Password</label>
           <div className="input">
             <input
-              type={isViewPassword ? "password" : "text"}
+              type={isViewPassword ? "text" : "password"}
               placeholder="Enter password"
               required
               {...register("password")}
@@ -67,12 +67,12 @@ function LoginCard() {
             <p>
               {isViewPassword ? (
                 <i
-                  className="fa-solid fa-eye"
+                  className="fa-solid fa-eye-slash"
                   onClick={() => setIsViewPassword(!isViewPassword)}
                 ></i>
               ) : (
                 <i
-                  className="fa-solid fa-eye-slash"
+                  className="fa-solid fa-eye"
                   onClick={() => setIsViewPassword(!isViewPassword)}
                 ></i>
               )}

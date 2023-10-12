@@ -2,17 +2,20 @@ import React, { useEffect, useRef } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getPriceThunk } from "../../store/slices/price.slice";
+import Selections from "./filters/Selections";
+import {
+  Colores,
+  Estados,
+  Modelos,
+  TipoVehiculo,
+} from "./filters/OptionsFilters";
 import Valor from "./filters/Valor";
-import Selecciones from "./filters/Selecciones";
-import { Colores, Estados, Modelos, TipoVehiculo } from "./filters/Filters";
-// import { setIsViewNav } from "../../store/slices/isView.slice";
 import { CSSTransition } from "react-transition-group";
 
 const Filter = () => {
   const myRef = useRef();
   const dispatch = useDispatch();
   const isView = useSelector((state) => state.isView);
-  // const isViewNav = isView.isViewNav;
 
   useEffect(() => {
     dispatch(getPriceThunk());
@@ -20,7 +23,7 @@ const Filter = () => {
 
   return (
     <div className="filter">
-      <Selecciones />
+      <Selections />
       {isView.isView && (
         <div className="filter__container">
           <div className="filter__container--title">

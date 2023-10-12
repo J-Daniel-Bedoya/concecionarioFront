@@ -1,8 +1,6 @@
-import React from "react";
-
 import { useDispatch, useSelector } from "react-redux";
-import { setFilter } from "../../../store/slices/filters.slice";
-import { setValidacion } from "../../../store/slices/validacion.slice";
+import { setFilter } from "../../store/slices/filters.slice";
+import { setValidacion } from "../../store/slices/validacion.slice";
 
 const useChecksFiltros = () => {
   const dispatch = useDispatch();

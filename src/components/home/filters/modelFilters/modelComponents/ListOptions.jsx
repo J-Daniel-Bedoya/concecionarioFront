@@ -1,6 +1,6 @@
 import React from "react";
-import useDatosFiltros from "../../../hooks/useDatosFiltros";
-import useChecksFiltros from "../../../hooks/useChecksFiltros";
+import useDatosFiltros from "../../../../../hooks/filters/useDatosFiltros";
+import useChecksFiltros from "../../../../../hooks/filters/useChecksFiltros";
 
 const ListOptions = ({ type, arrElements, validacion }) => {
   const { clickCheckbox } = useChecksFiltros();
@@ -13,7 +13,7 @@ const ListOptions = ({ type, arrElements, validacion }) => {
           onClick={() => clickCheckbox(tipo, type)}
           className="list__options"
           style={{
-            backgroundColor: !validacion?.includes(tipo) && "#5315fdd3",
+            backgroundColor: !validacion?.includes(tipo) ? "#000" : "#fff",
           }}
         >
           <p>{tipo}</p>

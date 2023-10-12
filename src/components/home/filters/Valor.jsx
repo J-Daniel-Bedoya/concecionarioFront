@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setDespliegues } from "../../../store/slices/despliegues.slice";
-import { CSSTransition } from "react-transition-group";
 import { useForm } from "react-hook-form";
+import { CSSTransition } from "react-transition-group";
+import { setDespliegues } from "../../../store/slices/despliegues.slice";
 import { setFilter } from "../../../store/slices/filters.slice";
 import { setValor } from "../../../store/slices/valor.slice";
 
@@ -12,12 +12,18 @@ const Valor = () => {
   const despliegue = useSelector((state) => state.despliegues["valor"]);
   const arrSelecciones = useSelector((state) => state.filters);
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const submitValor = (precio) => {
     const valor = `${precio.min} a ${precio.max}`;
     dispatch(setFilter([...arrSelecciones, valor]));
     dispatch(setValor([precio.min, precio.max]));
+
+    const resetValor = {
+      min: "",
+      max: "",
+    };
+    reset(resetValor);
   };
 
   return (

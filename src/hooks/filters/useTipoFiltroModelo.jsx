@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setFilter } from "../../../store/slices/filters.slice";
+import { setFilter } from "../../store/slices/filters.slice";
 
 const useTipoFiltroModelo = () => {
   const dispatch = useDispatch();
