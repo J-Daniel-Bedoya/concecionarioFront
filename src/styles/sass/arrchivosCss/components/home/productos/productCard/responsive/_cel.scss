@@ -1,15 +1,13 @@
 .card {
   width: 17rem;
-  height: 23rem;
-  background-color: #ffffff;
+  height: 25rem;
+  // background: linear-gradient(to right, #7e73f9, #89aefd);
   border: 1px #e6e6e6 solid;
-  // object-fit: contain;
   display: flex;
   flex-direction: column;
-  //   align-items: ;
   position: relative;
   transition: 0.3s;
-  //   padding: 1rem;
+  border-radius: 5px;
 
   &:hover {
     box-shadow: 0 15px 20px #b8b7ba4d;
@@ -22,7 +20,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0fffd;
+    // background: linear-gradient(to right, #471ac5, #074f97);
 
     background-position: center;
     background-repeat: no-repeat;
@@ -41,11 +39,21 @@
     flex-direction: column;
     gap: 0.5px;
     position: relative;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+    color: #000;
     // background-color: #14043f;
 
+    &--title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #222121;
+      padding-bottom: 2rem;
+      text-align: center;
+    }
     & p {
       margin: 0;
+      font-size: 16px;
+      font-weight: 600;
     }
 
     &--date {
@@ -56,12 +64,12 @@
       color: #c3c2c2;
 
       &:hover {
-        color: #14043f;
+        color: #fff;
       }
     }
     &--price {
       /* background-color:#8c84eb; */
-      color: #14043f;
+      // color: #fff;
       width: max-content;
       height: 25px;
       font-size: 20px;
@@ -74,7 +82,7 @@
       align-items: center;
     }
   }
-  & b {
+  & span {
     font-weight: 500;
   }
 }

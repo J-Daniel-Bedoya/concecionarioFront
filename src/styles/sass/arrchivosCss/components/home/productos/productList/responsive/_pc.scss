@@ -1,2 +1,7 @@
 @media screen and (width >= 1500px) {
+  .productsList {
+    display: grid;
+    grid-template-columns: repeat((3, 1fr));
+    place-items: center;
+  }
 }

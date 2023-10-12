@@ -13,7 +13,7 @@ const ProductCard = (vehicle) => {
         <img src={productInfo?.img} />
       </div>
       <div className="card__info">
-        <p className="card__info--title">{productInfo.modelo}</p>
+        <h3 className="card__info--title">{productInfo.modelo}</h3>
         <p
           className="card__info--state"
           style={{ color: productInfo.esNuevo ? "#09ba41" : "#954809" }}
@@ -21,22 +21,22 @@ const ProductCard = (vehicle) => {
 
         {!productInfo.esNuevo && (
           <p className="card__info--klm">
-            <b>{productInfo.kilometraje}</b> km
+            KM: <span>{productInfo.kilometraje}</span>
           </p>
         )}
         {productInfo.tipo?.toLowerCase() === "moto" && (
           <>
             <p className="card__info--clj">
-              Cilindraje: <b>{productInfo.cilindraje}</b>
+              Cilindraje: <span>{productInfo.cilindraje}</span>
             </p>
             <p className="card__info--vls">
-              Velocidades: <b>{productInfo.numVelocidades}</b>
+              Velocidades: <span>{productInfo.numVelocidades}</span>
             </p>
           </>
         )}
         <p className="card__info--date">{`${productInfo.fechaRegistro}`}</p>
         <p className="card__info--price">
-          <b>$</b>
+          <span>$</span>
           {productInfo.precio}
         </p>
       </div>

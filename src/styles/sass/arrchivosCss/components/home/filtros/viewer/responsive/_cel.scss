@@ -1,0 +1,51 @@
+@use "../../../../../../variables/var";
+@use "../../../../../../mixins/mixins";
+
+.filter {
+  &__viewer {
+    // background-color: #e2b6b6;
+    outline: 1px solid #dbd9d9;
+    border-radius: 5px;
+    padding: 10px 10px 10px 3px;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-family: var.$Poppins;
+    transition: 0.3s;
+    margin-bottom: 1rem;
+
+    &:hover {
+      box-shadow: 0px 12px 16px #dbd9d9;
+    }
+
+    &--item {
+      width: max-content;
+      height: 2rem;
+      padding: 0 10px;
+      background: linear-gradient(to right, #5e27f6, #1179e1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      border-radius: 15px;
+      transition: 0.2s;
+
+      & p {
+        font-size: 14px;
+        margin: 1px 0 0 0;
+        color: #fff;
+        font-weight: 600;
+      }
+
+      & i {
+        font-size: 12px;
+        color: #fff;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: #000;
+      }
+    }
+  }
+}

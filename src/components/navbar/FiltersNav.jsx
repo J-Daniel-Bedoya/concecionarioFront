@@ -50,7 +50,7 @@ const FiltersNav = ({ isBlock }) => {
               <Modelos />
               <Colores />
               <Estados />
-              {/* <Valor /> */}
+              <Valor />
             </div>
           </CSSTransition>
         </div>

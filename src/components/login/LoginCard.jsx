@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setLoading } from "../../store/slices/loader.slice";
 
@@ -9,6 +9,8 @@ function LoginCard() {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [infoFalse, setInfoFalse] = useState(true);
+  const [isViewPassword, setIsViewPassword] = useState(false);
 
   const submit = (data) => {
     axios
@@ -23,6 +25,7 @@ function LoginCard() {
       })
       .catch((error) => {
         console.log(error.response);
+        setInfoFalse(false);
       });
   };
 
@@ -37,26 +40,44 @@ function LoginCard() {
 
       <div className="loginCard__inputs">
         <div className="loginCard__inputs--container">
-          {/* <div className="email"> */}
           <label>Email</label>
-          <input
-            type="email"
-            placeholder="Enter email"
-            required
-            {...register("email")}
-          />
-          {/* </div> */}
+          <div className="input">
+            <input
+              type="email"
+              placeholder="Enter email"
+              required
+              {...register("email")}
+            />
+          </div>
           <p>We'll never share your email with anyone else.</p>
         </div>
 
         <div className="loginCard__inputs--container">
           <label>Password</label>
-          <input
-            type="password"
-            placeholder="Password"
-            required
-            {...register("password")}
-          />
+          <div className="input">
+            <input
+              type={isViewPassword ? "password" : "text"}
+              placeholder="Enter password"
+              required
+              {...register("password")}
+            />
+            {!infoFalse && (
+              <p className="incorrect">Incorrect email or password</p>
+            )}
+            <p>
+              {isViewPassword ? (
+                <i
+                  className="fa-solid fa-eye"
+                  onClick={() => setIsViewPassword(!isViewPassword)}
+                ></i>
+              ) : (
+                <i
+                  className="fa-solid fa-eye-slash"
+                  onClick={() => setIsViewPassword(!isViewPassword)}
+                ></i>
+              )}
+            </p>
+          </div>
         </div>
       </div>
 

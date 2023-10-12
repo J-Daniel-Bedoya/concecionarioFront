@@ -15,12 +15,12 @@ const Selecciones = () => {
       classNames="expand"
       unmountOnExit
     >
-      <div className="viewer" ref={myRef}>
+      <div className="filter__viewer" ref={myRef}>
         {arrSelecciones.map((select, i) => (
           <div
             key={i}
             onClick={() => desSelecionar(select)}
-            className="viewer__item"
+            className="filter__viewer--item"
           >
             <p>{select}</p>
             <i className="fa-solid fa-circle-minus"></i>

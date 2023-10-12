@@ -21,50 +21,47 @@ const Valor = () => {
   };
 
   return (
-    <div className="filter__options--sub">
-      <button
+    <div className="filter__container--options">
+      <div
         onClick={() => dispatch(setDespliegues("valor"))}
-        className="filter__button"
+        className="buttons"
         style={{
-          color: despliegue && "var(--cl-identity)",
+          color: despliegue && "#",
         }}
       >
-        Valor{" "}
+        <p>Valor </p>
         {despliegue ? (
-          <i className="fa-solid fa-caret-down"></i>
+          <i className="fa-solid fa-caret-up"></i>
         ) : (
-          <i className="fa-solid fa-caret-right"></i>
+          <i className="fa-solid fa-caret-down"></i>
         )}
-      </button>
+      </div>
       <CSSTransition
         in={despliegue}
         timeout={300}
         classNames="expand"
         unmountOnExit
       >
-        <div className="options__sub" ref={myRef}>
-          <form
-            onSubmit={handleSubmit(submitValor)}
-            className="options__sub--price"
-          >
-            <div className="ontions__sub--price-input">
+        <div className="list" ref={myRef}>
+          <form onSubmit={handleSubmit(submitValor)} className="list__form">
+            <div className="list__form--inputs">
               <input
-                type="text"
-                placeholder="10000"
-                className="filter__input"
+                type="number"
+                placeholder="Desde 10000"
                 autoComplete="off"
                 {...register("min", { min: 10000 })}
               />
-              <p>a</p>
+              {/* <p>a</p> */}
               <input
-                type="text"
-                placeholder="250000000"
-                className="filter__input"
+                type="number"
+                placeholder="Hasta 250000000"
                 autoComplete="off"
                 {...register("max", { max: 250000000 })}
               />
             </div>
-            <button type="submit">Filtrar</button>
+            <button className="list__form--button" type="submit">
+              Filtrar
+            </button>
           </form>
         </div>
       </CSSTransition>

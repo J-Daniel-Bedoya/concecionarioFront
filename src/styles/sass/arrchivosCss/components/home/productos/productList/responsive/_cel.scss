@@ -2,8 +2,8 @@
   width: 100%;
   height: auto;
   margin-top: 4rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-  place-items: center;
-  gap: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
