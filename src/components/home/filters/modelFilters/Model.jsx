@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { useSelector } from "react-redux";
 import { CSSTransition } from "react-transition-group";
 import Button from "./modelComponents/Button";
-import { ListOptions, ListOptionsModels } from "./modelComponents/listOptions";
+import { ListOptions, ListOptionsModels } from "./modelComponents/ListOptions";
 
 const Model = ({ tipo, name, arrElements, despliegue }) => {
   //
