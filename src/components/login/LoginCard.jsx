@@ -37,6 +37,7 @@ function LoginCard() {
           alt="user"
         />
       </div>
+      <p className="warning">We'll never share your email with anyone else.</p>
 
       <div className="loginCard__inputs">
         <div className="loginCard__inputs--container">
@@ -49,7 +50,6 @@ function LoginCard() {
               {...register("email")}
             />
           </div>
-          <p>We'll never share your email with anyone else.</p>
         </div>
 
         <div className="loginCard__inputs--container">
@@ -61,9 +61,7 @@ function LoginCard() {
               required
               {...register("password")}
             />
-            {!infoFalse && (
-              <p className="incorrect">Incorrect email or password</p>
-            )}
+
             <p>
               {isViewPassword ? (
                 <i
@@ -79,6 +77,7 @@ function LoginCard() {
             </p>
           </div>
         </div>
+        {!infoFalse && <p className="incorrect">Incorrect email or password</p>}
       </div>
 
       <button className="loginCard__button" variant="primary" type="submit">

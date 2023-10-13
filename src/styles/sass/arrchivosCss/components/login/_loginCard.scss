@@ -11,6 +11,18 @@
   // gap: 3rem;
   color: #fff;
 
+  & .warning {
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  & .incorrect {
+    text-align: center;
+    color: #f80b37;
+    font-size: 12px;
+  }
+
   &__img {
     width: 70px;
     height: 70px;
@@ -62,15 +74,6 @@
           right: 1rem;
           color: #05294d;
         }
-      }
-
-      & p {
-        font-size: 14px;
-      }
-
-      & .incorrect {
-        color: #f80b37;
-        padding-left: 0.2rem;
       }
     }
   }

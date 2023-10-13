@@ -1,0 +1,10 @@
+@media screen and (width >= 1500px) {
+  .register {
+    &__form {
+      &--input {
+        & .type__selection {
+        }
+      }
+    }
+  }
+}

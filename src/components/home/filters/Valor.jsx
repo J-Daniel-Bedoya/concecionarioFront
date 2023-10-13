@@ -19,11 +19,7 @@ const Valor = () => {
     dispatch(setFilter([...arrSelecciones, valor]));
     dispatch(setValor([precio.min, precio.max]));
 
-    const resetValor = {
-      min: "",
-      max: "",
-    };
-    reset(resetValor);
+    reset();
   };
 
   return (

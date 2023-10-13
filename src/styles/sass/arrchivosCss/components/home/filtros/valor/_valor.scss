@@ -1,3 +1,5 @@
+@use "../../../../../variables/var";
+
 .filter {
   &__container {
     &--options {
@@ -18,7 +20,7 @@
               width: 100%;
               height: 2rem;
               font-size: 12px;
-              border-radius: 5px;
+              border-radius: var.$radius;
               border: 1px solid #1188ff;
               padding-left: 0.5rem;
 
@@ -34,7 +36,7 @@
             height: 2rem;
             font-size: 16px;
             font-weight: bold;
-            border-radius: 5px;
+            border-radius: var.$radius;
             background: linear-gradient(to right, #5315fd, #1188ff);
             color: #fff;
           }

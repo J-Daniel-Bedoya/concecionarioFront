@@ -1,0 +1,17 @@
+@media screen and (width >= 768px) {
+  .register {
+    &__form {
+      width: 40rem;
+      padding: 2rem;
+      //   &--input {
+      //   }
+      & .type {
+        &__selections {
+          &--options {
+            width: 10rem;
+          }
+        }
+      }
+    }
+  }
+}

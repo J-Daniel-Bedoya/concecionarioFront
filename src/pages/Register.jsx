@@ -8,10 +8,12 @@ const Register = () => {
   const dispatch = useDispatch();
   const valueType = watch("tipo");
   const valueIsNew = watch("esNuevo");
+  const valueImg = watch("img");
+  // const [selectedFile, setSelectedFile] = useState(null);
 
   const submit = (data) => {
     console.log(data);
-    const img = data.img[0].name;
+    const img = data.img[0]?.name;
     const precio = parseInt(data.precio);
     const kilometraje = parseInt(data.kilometraje);
     const numCilindraje = parseInt(data.cilindraje);
@@ -34,6 +36,8 @@ const Register = () => {
       fechaRegistro: data.fechaRegistro,
     };
     dispatch(createVehicleThunk(newData));
+
+    reset();
   };
 
   const handleTypeChange = (e) => {
@@ -43,40 +47,46 @@ const Register = () => {
     setValue(valueIsNew, e.target.value);
   };
 
+  const imgSelection = valueImg?.[0]?.name;
+  const nameImg = imgSelection?.slice(0, 20);
+
   return (
     <div className="register">
-      <form onSubmit={handleSubmit(submit)}>
+      <form onSubmit={handleSubmit(submit)} className="register__form">
         <div
           style={{ display: "flex", width: "max-content" }}
           controlId="formBasicEmail"
+          className="register__form--input type"
         >
           <label>Type</label>
-          <select
-            style={{ display: "inline-block" }}
-            value={valueType}
-            onChange={handleTypeChange}
-            className="form__selection"
-            {...register("tipo")}
-          >
-            <option value="Carro">Carro</option>
-            <option value="Moto">Moto</option>
-          </select>
-          <select
-            style={{ display: "inline-block" }}
-            value={valueIsNew}
-            onChange={handleStateChange}
-            className="form__selection"
-            {...register("esNuevo")}
-          >
-            <option value={"Nuevo"}>Nuevo</option>
-            <option value={"Usado"}>Usado</option>
-          </select>
+          <div className="type__selections">
+            <select
+              style={{ display: "inline-block" }}
+              value={valueType}
+              onChange={handleTypeChange}
+              className="type__selections--options"
+              {...register("tipo")}
+            >
+              <option value="Carro">Carro</option>
+              <option value="Moto">Moto</option>
+            </select>
+            <select
+              style={{ display: "inline-block" }}
+              value={valueIsNew}
+              onChange={handleStateChange}
+              className="type__selections--options"
+              {...register("esNuevo")}
+            >
+              <option value={"Nuevo"}>Nuevo</option>
+              <option value={"Usado"}>Usado</option>
+            </select>
+          </div>
         </div>
-        <div>
+        <div className="register__form--input color">
           <label>Color</label>
           <input placeholder="Enter color" type="text" {...register("color")} />
         </div>
-        <div>
+        <div className="register__form--input model">
           <label>Model</label>
           <input
             type="text"
@@ -85,7 +95,7 @@ const Register = () => {
           />
         </div>
 
-        <div>
+        <div className="register__form--input price">
           <label>Price</label>
           <input
             type="number"
@@ -96,8 +106,8 @@ const Register = () => {
           />
         </div>
         {valueType === "Moto" && (
-          <div>
-            <div>
+          <div className="register__form--input typeMotorcycle">
+            <div className="typeMotorcycle__cylinder">
               <label>Cylinder capacity</label>
               <input
                 max="400"
@@ -106,7 +116,7 @@ const Register = () => {
                 {...register("cilindraje")}
               />
             </div>
-            <div>
+            <div className="typeMotorcycle__velocity">
               <label>Velocity number</label>
               <input
                 max="6"
@@ -119,7 +129,7 @@ const Register = () => {
           </div>
         )}
         {valueIsNew === "Usado" && (
-          <div>
+          <div className="register__form--input state">
             <label>Kilometer</label>
             <input
               min="1"
@@ -129,7 +139,7 @@ const Register = () => {
             />
           </div>
         )}
-        <div>
+        <div className="register__form--input date">
           <label>Register Date</label>
           <input
             type="date"
@@ -137,15 +147,22 @@ const Register = () => {
             {...register("fechaRegistro")}
           />
         </div>
-        <div>
-          <label>Image</label>
+        <div className="register__form--input img">
+          <p>Image</p>
+          <label htmlFor="fileInput">
+            {nameImg === undefined ? "Elige una imagen" : `${nameImg}...`}
+            {/* <p>Elige una image</p> <span>{nameImg}...</span> */}
+          </label>
           <input
             type="file"
+            id="fileInput"
             accept="image/png, image/jpeg"
             {...register("img")}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button className="register__form--button" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );
