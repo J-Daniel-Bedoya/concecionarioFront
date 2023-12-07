@@ -1,0 +1,30 @@
+.productDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__img {
+    margin: 6rem 0;
+    width: 20rem;
+    height: 12rem;
+  }
+
+  &__container {
+    &--title {
+    }
+    &--brand {
+    }
+    &--info {
+      & .info {
+        &__list {
+        }
+      }
+
+      & button {
+      }
+    }
+  }
+  &__carrusel {
+    &--products {
+    }
+  }
+}

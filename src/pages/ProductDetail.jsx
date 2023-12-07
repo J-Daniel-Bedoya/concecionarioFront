@@ -19,13 +19,13 @@ const ProductDetail = () => {
   const vehiclesFiltered = vehicles.filter((e) => vehicle.tipo == e.tipo);
 
   return (
-    <div className="product-detail">
-      <img className="product-detail__carimage" src={vehicle?.img} fluid />
-      <div className="background">
-        <h1 className="product-detail__title">{vehicle?.modelo}</h1>
-        <p className="product-detail__brand">Honda</p>
-        <div className="product-detail__containerinfo">
-          <ul className="product-detail__info">
+    <div className="productDetail">
+      <img className="productDetail__img" src={vehicle?.img} fluid />
+      <div className="productDetail__container">
+        <h1 className="productDetail__container--title">{vehicle?.modelo}</h1>
+        <p className="productDetail__container--brand">Honda</p>
+        <div className="productDetail__container--info">
+          <ul className="info">
             <li className="info__list">Type : {vehicle?.tipo}</li>
             <li className="info__list">
               State: {vehicle?.esNuevo ? "Nuevo" : "Usado"}
@@ -46,14 +46,14 @@ const ProductDetail = () => {
             )}
             <li className="info__list">Price: ${vehicle?.precio}</li>
           </ul>
-          <button id="dropdown-basic-button" title="Options">
+          <button id="button" title="Options">
             <Edit vehicle={vehicle} />
             <Sell vehicle={vehicle} />
           </button>
         </div>
       </div>
-      <div className="product-detail__carrousel">
-        <div className="carrousel__products">
+      <div className="productDetail__carrousel">
+        <div className="productDetail__carrousel--products">
           {vehiclesFiltered.map((vehicle) => (
             <ProductCard key={vehicle.id} vehicle={vehicle} />
           ))}
