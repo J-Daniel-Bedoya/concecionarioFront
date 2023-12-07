@@ -1,9 +1,10 @@
 .productsList {
-  width: 100%;
+  max-width: 27rem;
   height: auto;
-  margin-top: 4rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
+  padding: 0 0.3rem;
 }
