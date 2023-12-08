@@ -17,6 +17,8 @@ const ProductDetail = () => {
   const vehicle = vehicles.find((element) => element.id == id);
   const navigate = useNavigate();
   const vehiclesFiltered = vehicles.filter((e) => vehicle.tipo == e.tipo);
+  const [optionEdit, setOptionEdit] = useState(false);
+  const [optionSell, setOptionSell] = useState(false);
 
   return (
     <div className="productDetail">
@@ -46,14 +48,29 @@ const ProductDetail = () => {
             )}
             <li className="info__list">Price: ${vehicle?.precio}</li>
           </ul>
-          <button id="button" title="Options">
-            <Edit vehicle={vehicle} />
-            <Sell vehicle={vehicle} />
+          <button
+            id="edit"
+            title="edit"
+            onClick={() => setOptionEdit(!optionEdit)}
+          >
+            <i class="fa-solid fa-pencil"></i>
           </button>
+          <button
+            id="sell"
+            title="sell"
+            onClick={() => setOptionSell(!optionSell)}
+          >
+            <i class="fa-solid fa-camera-rotate"></i>
+          </button>
+          <div>
+            {optionEdit && <Edit vehicle={vehicle} />}
+
+            {optionSell && <Sell vehicle={vehicle} />}
+          </div>
         </div>
       </div>
-      <div className="productDetail__carrousel">
-        <div className="productDetail__carrousel--products">
+      <div className="productDetail__carrusel">
+        <div className="productDetail__carrusel--products">
           {vehiclesFiltered.map((vehicle) => (
             <ProductCard key={vehicle.id} vehicle={vehicle} />
           ))}

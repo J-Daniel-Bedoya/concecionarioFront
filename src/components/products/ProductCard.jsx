@@ -15,21 +15,21 @@ const ProductCard = (vehicle) => {
       <div className="card__info">
         <h3 className="card__info--title">{productInfo.modelo}</h3>
         <p
-          className="card__info--state"
+          className="card__info--p"
           style={{ color: productInfo.esNuevo ? "#09ba41" : "#954809" }}
         >{`${productInfo.esNuevo ? "Nuevo" : "Usado"}`}</p>
 
         {!productInfo.esNuevo && (
-          <p className="card__info--klm">
+          <p className="card__info--p">
             KM: <span>{productInfo.kilometraje}</span>
           </p>
         )}
         {productInfo.tipo?.toLowerCase() === "moto" && (
           <>
-            <p className="card__info--clj">
+            <p className="card__info--p">
               Cilindraje: <span>{productInfo.cilindraje}</span>
             </p>
-            <p className="card__info--vls">
+            <p className="card__info--p">
               Velocidades: <span>{productInfo.numVelocidades}</span>
             </p>
           </>

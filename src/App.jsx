@@ -12,7 +12,7 @@ import ProductDetail from "./pages/ProductDetail";
 
 /******** C O M P O N E N T S *********** */
 // import Loader from "./components/login/Loader";
-import ProtectedRoutes from "./components/ProtectedRoutes";
+import ProtectedRoutes from "./pages/ProtectedRoutes";
 import Navbar from "./pages/Navbar";
 import Profile from "./pages/Profile";
 
