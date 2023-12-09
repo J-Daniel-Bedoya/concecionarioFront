@@ -25,17 +25,15 @@ const ProductDetail = () => {
       <img className="productDetail__img" src={vehicle?.img} fluid />
       <div className="productDetail__container">
         <h1 className="productDetail__container--title">{vehicle?.modelo}</h1>
-        <p className="productDetail__container--brand">Honda</p>
         <div className="productDetail__container--info">
           <ul className="info">
+            <li className="info__list">Marca: Honda</li>
             <li className="info__list">Type : {vehicle?.tipo}</li>
             <li className="info__list">
               State: {vehicle?.esNuevo ? "Nuevo" : "Usado"}
             </li>
             <li className="info__list">Color: {vehicle?.color}</li>
-            <li className="info__list">
-              Register Date: {vehicle?.fechaRegistro}
-            </li>
+            <li className="info__list">RD: {vehicle?.fechaRegistro}</li>
             {vehicle?.tipo === "moto" && (
               <li className="info__list">
                 Cylinder Capacity: {vehicle?.cilindraje}cc
@@ -48,24 +46,26 @@ const ProductDetail = () => {
             )}
             <li className="info__list">Price: ${vehicle?.precio}</li>
           </ul>
-          <button
-            id="edit"
-            title="edit"
-            onClick={() => setOptionEdit(!optionEdit)}
-          >
-            <i class="fa-solid fa-pencil"></i>
-          </button>
-          <button
-            id="sell"
-            title="sell"
-            onClick={() => setOptionSell(!optionSell)}
-          >
-            <i class="fa-solid fa-camera-rotate"></i>
-          </button>
-          <div>
-            {optionEdit && <Edit vehicle={vehicle} />}
+          <div className="options">
+            <button
+              className="options__edit"
+              title="edit"
+              onClick={() => setOptionEdit(!optionEdit)}
+            >
+              <i class="fa-solid fa-pencil"></i>
+            </button>
+            <button
+              className="options__sell"
+              title="sell"
+              onClick={() => setOptionSell(!optionSell)}
+            >
+              <i class="fa-solid fa-camera-rotate"></i>
+            </button>
+            <div className="options__select">
+              {optionEdit && <Edit vehicle={vehicle} />}
 
-            {optionSell && <Sell vehicle={vehicle} />}
+              {optionSell && <Sell vehicle={vehicle} />}
+            </div>
           </div>
         </div>
       </div>
