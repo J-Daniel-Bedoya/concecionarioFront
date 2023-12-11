@@ -5,6 +5,8 @@ export const isViewSlice = createSlice({
   initialState: {
     isView: false,
     isViewNav: false, // Agregamos isViewNav como parte del estado inicial
+    isViewEdit: false,
+    isViewSell: false,
   },
   reducers: {
     setIsView: (state, action) => {
@@ -13,8 +15,15 @@ export const isViewSlice = createSlice({
     setIsViewNav: (state, action) => {
       state.isViewNav = action.payload; // Actualizamos isViewNav en el estado
     },
+    setIsViewEdit: (state, action) => {
+      state.isViewEdit = action.payload;
+    },
+    setIsViewSell: (state, action) => {
+      state.isViewSell = action.payload;
+    },
   },
 });
 
-export const { setIsView, setIsViewNav } = isViewSlice.actions;
+export const { setIsView, setIsViewNav, setIsViewEdit, setIsViewSell } =
+  isViewSlice.actions;
 export default isViewSlice.reducer;

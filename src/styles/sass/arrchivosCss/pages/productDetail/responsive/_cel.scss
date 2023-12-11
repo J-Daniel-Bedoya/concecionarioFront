@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   padding: 0 0.3rem;
+  z-index: 0;
+
   &__img {
     margin: 6rem 0;
     width: 20rem;
@@ -10,6 +12,8 @@
   }
 
   &__container {
+    width: auto;
+    height: auto;
     margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
@@ -20,7 +24,7 @@
       font-size: 22px;
     }
     &--info {
-      width: 100%;
+      width: 21rem;
       height: auto;
       display: flex;
       flex-direction: column;
@@ -49,30 +53,25 @@
         display: flex;
         gap: 1rem;
 
-        & button {
+        &__button {
           background: linear-gradient(to right, #5315fd, #1188ff);
           width: 5rem;
           height: 2rem;
           border: none;
+          cursor: pointer;
 
           & i {
             font-size: 1.2rem;
             color: #ece9e9;
           }
         }
-        &__select {
-          background-color: #1188ff;
-          width: 100%;
-          height: 100%;
-          position: absolute;
-        }
       }
     }
   }
   &__carrusel {
     &--products {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr;
       gap: 1rem;
     }
   }
